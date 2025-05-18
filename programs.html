@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>برامج التمرين - FitNashat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/workout-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+    body::before {
+      display: none;
+    }
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      margin-bottom: 40px;
+      background-color: rgba(0,0,0,0.6);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+      z-index: 1;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00ffe1;
+      text-shadow: 0 0 8px rgba(0,255,255,0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo i {
+      font-size: 30px;
+    }
+    .home-link a {
+      background: #00e6ac;
+      color: #1a1a1a;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .home-link a:hover {
+      background: #00ffe1;
+      box-shadow: 0 0 10px #00ffe1;
+    }
+    h1 {
+      background-color: rgba(0,0,0,0.5);
+      padding: 15px 30px;
+      border-radius: 20px;
+      font-size: 36px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.3);
+      z-index: 1;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      z-index: 1;
+    }
+    .tab-btn {
+      flex: 1 1 200px;
+      max-width: 300px;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      background: #00e6ac;
+      color: #1a1a1a;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: #00ffe1;
+      box-shadow: 0 0 10px #00ffe1;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+      max-width: 700px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0,255,255,0.1);
+      z-index: 1;
+    }
+    .tab-content video {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .tab-content.active {
+      display: flex;
+    }
+    .text {
+      font-size: 21px;
+      line-height: 1.9;
+      padding: 0 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-dumbbell"></i> FitNashat
+    </div>
+    <div class="home-link">
+      <a href="home.html">العودة للرئيسية</a>
+    </div>
+  </header>
+
+  <h1>برامج التمرين</h1>
+
+  <div class="tabs">
+    <button class="tab-btn" onclick="openTab('strength')">تمارين القوة</button>
+    <button class="tab-btn" onclick="openTab('cardio')">تمارين الكارديو</button>
+    <button class="tab-btn" onclick="openTab('flexibility')">تمارين المرونة</button>
+  </div>
+
+  <div id="strength" class="tab-content">
+    <div class="text">
+      <h2>تمارين القوة</h2>
+      <p>تمارين القوة تساعدك على بناء الكتلة العضلية وتحسين القدرة على التحمل البدني. تشمل رفع الأوزان، الضغط، وتمارين المقاومة باستخدام الأجهزة أو وزن الجسم.</p>
+    </div>
+    <video controls autoplay muted loop src="assets/videos/strength.mp4"></video>
+  </div>
+
+  <div id="cardio" class="tab-content">
+    <div class="text">
+      <h2>تمارين الكارديو</h2>
+      <p>تمارين الكارديو تُعزز صحة القلب وتحرق السعرات الحرارية. تشمل الجري، القفز بالحبل، الدراجة، والمشي السريع.</p>
+    </div>
+    <video controls autoplay muted loop src="assets/videos/cardio.mp4"></video>
+  </div>
+
+  <div id="flexibility" class="tab-content">
+    <div class="text">
+      <h2>تمارين المرونة</h2>
+      <p>تمارين المرونة تُساعد في تحسين مدى حركة المفاصل وتقليل خطر الإصابات. تشمل تمارين التمدد واليوغا وتمارين الاستطالة.</p>
+    </div>
+    <video controls autoplay muted loop src="assets/videos/flexibility.mp4"></video>
+  </div>
+
+  <script>
+    function openTab(id) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>

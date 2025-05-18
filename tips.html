@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>النصائح العامة - FitNashat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("assets/images/f1.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #00e6ac;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #101820;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      font-size: 26px;
+    }
+
+    .home-link a {
+      color: #101820;
+      font-weight: bold;
+      text-decoration: none;
+      background: #ffffff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .home-link a:hover {
+      background: #d0fff4;
+      color: #000;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0, 255, 200, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00e6ac;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .tip {
+      background: #1b2b3a;
+      margin-bottom: 20px;
+      padding: 25px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+      cursor: pointer;
+    }
+
+    .tip h2 {
+      color: #00ffe1;
+      margin-bottom: 10px;
+    }
+
+    .tip p {
+      color: #ccc;
+    }
+
+    .tip:hover {
+      background: #00e6ac;
+      color: #000;
+      transform: scale(1.03);
+    }
+
+    .tip:hover h2,
+    .tip:hover p {
+      color: #000;
+    }
+
+    .video-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      margin-bottom: 20px;
+      color: #00e6ac;
+      font-size: 24px;
+    }
+
+    .video-section video {
+      width: 90%;
+      max-width: 720px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 255, 200, 0.2);
+    }
+
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url("assets/images/f1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  line-height: 1.8;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6); /* تغميق 60% */
+  z-index: 0;
+}
+
+main,
+header {
+  position: relative;
+  z-index: 1;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-lightbulb"></i> FitNashat
+    </div>
+    <div class="home-link">
+      <a href="home.html">العودة للرئيسية</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>النصائح العامة</h1>
+
+    <div class="tip" onclick="toggleContent(this)">
+      <h2>كيفية الالتزام بالروتين</h2>
+      <p>حدد وقتًا ثابتًا، خطط مسبقًا، اجعل عاداتك صحية ومكافئة.</p>
+    </div>
+
+    <div class="tip" onclick="toggleContent(this)">
+      <h2>كيفية تجنب الإصابات</h2>
+      <p>ابدأ بالتسخين، مارس التمارين بشكل صحيح، ولا تهمل التمدد بعد التمرين.</p>
+    </div>
+
+    <div class="video-section">
+      <h2>فيديو توعوي</h2>
+      <video controls autoplay muted loop>
+        <source src="assets/videos/w1.mp4" type="video/mp4">
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+    </div>
+  </main>
+
+  <script>
+    function toggleContent(element) {
+      const paragraph = element.querySelector('p');
+      paragraph.style.display = paragraph.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

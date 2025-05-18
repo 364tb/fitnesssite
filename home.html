@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الصفحة الرئيسية - FitNashat</title>
+
+  <!-- ملفات CSS -->
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="tab-container">
+    <!-- شريط التبويبات -->
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="openTab('home')"><i class="fas fa-home"></i> الصفحة الرئيسية</button>
+      <button class="tab-btn" onclick="openTab('about')"><i class="fas fa-user"></i> نبذة عن فادي</button>
+      <button class="tab-btn" onclick="openTab('purpose')"><i class="fas fa-bullseye"></i> الغرض من المدونة</button>
+      <button class="tab-btn" onclick="openTab('news')"><i class="fas fa-newspaper"></i> آخر الأخبار</button>
+      <button class="tab-btn" onclick="openTab('contact')"><i class="fas fa-envelope"></i> اتصل بنا</button>
+    </div>
+
+    <!-- تبويب الصفحة الرئيسية -->
+<div class="tab-content active" id="home" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+  <img src="assets/images/we.jpg" alt="FitNashat Home" class="tab-image" style="width: 120px; border-radius: 10px; flex-shrink: 0;" />
+  <div class="tab-text">
+    <h2>مرحباً بك في FitNashat</h2>
+    <p>منصة لياقة بدنية وصحة، تقدمها فادي، لمساعدتك في الوصول إلى أهدافك الصحية بأسلوب عملي ومُلهم.</p>
+    <div class="sub-buttons">
+      <a href="programs.html" class="sub-button-link">
+  <button>برامج التمارين</button>
+</a>
+ <a href="nutrition.html" class="sub-button-link">
+  <button>   النصائح الغذائية</button>
+</a>
+
+
+  <a href="goals.html" class="sub-button-link">
+  <button>   اهداف اللياقة</button>
+</a>
+
+      <a href="tips.html" class="sub-button-link">
+  <button>   نصائح عامة </button>
+</a> 
+
+       <a href="e.html" class="sub-button-link">
+  <button>    تفاصيل البرنامج </button>
+</a>
+
+
+
+       <a href="d.html" class="sub-button-link">
+  <button>  نصائح غذائية 2</button>
+</a>
+
+    </div>
+  </div>
+</div>
+
+<!-- تبويب نبذة عن فادي -->
+<div class="tab-content" id="about" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+  <img src="assets/images/about.jpg" alt="About Fadi" class="tab-image" style="width: 120px; border-radius: 10px; flex-shrink: 0;" />
+  <div class="tab-text">
+    <h2>من هو فادي؟</h2>
+    <p>فادي هو مدرب لياقة ومؤثر على السوشيال ميديا، يشارك رحلته الشخصية ونصائحه حول التمارين والتغذية الصحية.</p>
+  </div>
+</div>
+
+<!-- تبويب الغرض من المدونة -->
+<div class="tab-content" id="purpose" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+  <img src="assets/images/purpose.jpg" alt="Purpose of the Blog" class="tab-image" style="width: 120px; border-radius: 10px; flex-shrink: 0;" />
+  <div class="tab-text">
+    <h2>الغرض من المدونة</h2>
+    <p>توفير محتوى موثوق يشمل برامج تدريبية، نصائح غذائية، أهداف صحية، ومقاطع تعليمية تساعدك على بناء أسلوب حياة صحي.</p>
+  </div>
+</div>
+
+<!-- تبويب آخر الأخبار -->
+<div class="tab-content" id="news" style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+  <img src="assets/images/news.jpg" alt="Latest News" class="tab-image" style="width: 120px; border-radius: 10px; flex-shrink: 0;" />
+  <div class="tab-text">
+    <h2>آخر الأخبار</h2>
+    <ul>
+      <li>📅 تحدي 30 يوم نشاط يبدأ اليوم!</li>
+      <li>🎥 فيديو جديد: تمارين الكارديو في البيت</li>
+      <li>📝 مقال: كيف تبدأ برنامج تغذية مناسب لك؟</li>
+    </ul>
+  </div>
+</div>
+
+<!-- تبويب اتصل بنا -->
+<div class="tab-content" id="contact" style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+  <img src="assets/images/contact.jpg" alt="Contact Us" class="tab-image" style="width: 120px; border-radius: 10px; flex-shrink: 0;" />
+  <div class="tab-text">
+    <h2>اتصل بنا</h2>
+    <p>يمكنك مراسلتنا مباشرة عبر النموذج التالي:</p>
+    <form class="contact-form">
+      <input type="text" placeholder="الاسم الكامل" required />
+      <input type="email" placeholder="البريد الإلكتروني" required />
+      <textarea rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openTab(tabId) {
+    const tabs = document.querySelectorAll(".tab-content");
+    const buttons = document.querySelectorAll(".tab-btn");
+
+    tabs.forEach(tab => tab.style.display = "none");
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    const selectedTab = document.getElementById(tabId);
+    if (selectedTab) {
+      selectedTab.style.display = "flex";
+    }
+
+    // تفعيل الزر الذي ضغط عليه المستخدم
+    event.currentTarget.classList.add("active");
+  }
+
+  // إظهار التبويب الأول عند تحميل الصفحة
+  document.addEventListener("DOMContentLoaded", function () {
+    const firstTab = document.querySelector(".tab-content");
+    if (firstTab) firstTab.style.display = "flex";
+
+    const form = document.querySelector(".contact-form");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("✅ تم إرسال رسالتك بنجاح!");
+        form.reset();
+      });
+    }
+  });
+</script>
+
+
+</body>
+</html>

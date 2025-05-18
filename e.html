@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تفاصيل البرامج - FitNashat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1d1f21, #2e3033);
+      color: #fff;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #00e6ac;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #101820;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo i {
+      font-size: 26px;
+    }
+
+    .home-link a {
+      color: #101820;
+      font-weight: bold;
+      text-decoration: none;
+      background: #ffffff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .home-link a:hover {
+      background: #d0fff4;
+      color: #000;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.75);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0, 255, 200, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00e6ac;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .detail-toggle h2 {
+      background-color: #00e6ac;
+      color: #101820;
+      padding: 12px 20px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .detail-toggle h2:hover {
+      background-color: #00ffe1;
+      color: #000;
+    }
+
+    .detail {
+      background: #1b2b3a;
+      margin-bottom: 30px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+      display: none;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .detail.active {
+      display: block;
+    }
+
+    .detail p {
+      color: #ccc;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .detail img, .detail video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-dumbbell"></i> FitNashat
+    </div>
+    <div class="home-link">
+      <a href="home.html">العودة للرئيسية</a>
+    </div>
+  </header>
+
+  <main>
+    <h1>تفاصيل البرامج</h1>
+
+    <div class="detail-toggle">
+      <h2 onclick="toggleDetail('detail1')">كيفية أداء التمارين</h2>
+      <div class="detail" id="detail1">
+        <img src="assets/images/t4.jpg" alt="أداء التمارين">
+        <p>ابدأ بالإحماء لمدة 5 دقائق، ثم أدِّ التمرين بالحركة الصحيحة ببطء، مع التحكم الكامل في الوزن والتنفس المنتظم. راقب وضع الجسم وتجنّب الحركات المفاجئة.</p>
+        <video controls autoplay muted loop>
+          <source src="assets/videos/cv1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="detail-toggle">
+      <h2 onclick="toggleDetail('detail2')">عدد المرات الموصى بها</h2>
+      <div class="detail" id="detail2">
+        <img src="assets/images/a.jpg" alt="عدد المرات">
+        <p>يوصى بأداء كل تمرين من 2 إلى 3 مرات أسبوعيًا، مع مراعاة أيام الراحة لتجنب الإجهاد العضلي وضمان التعافي الفعال.</p>
+        <video controls autoplay muted loop>
+          <source src="assets/videos/q.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="detail-toggle">
+      <h2 onclick="toggleDetail('detail3')">الفوائد الصحية</h2>
+      <div class="detail" id="detail3">
+        <img src="assets/images/.jpg" alt="الفوائد الصحية">
+        <p>تحسّن التمارين من القوة العضلية، ترفع من كفاءة الدورة الدموية، تقلل التوتر، وتُسهم في تحسين جودة النوم وتعزيز الصحة النفسية.</p>
+        </video>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleDetail(id) {
+      document.querySelectorAll('.detail').forEach(d => d.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>

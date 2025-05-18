@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+  overflow: hidden;
+  background: url("assets/images/bg.avif") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* ✨ الحاوية */
+.container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  animation: showUp 1s ease-in-out forwards, glowPulse 3s infinite ease-in-out alternate;
+  transform-origin: center;
+  opacity: 0;
+}
+
+@keyframes showUp {
+  0% {
+    transform: scale(0.8) rotateX(30deg) translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotateX(0deg) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ✨ تأثير نابض خفيف */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.5);
+  }
+}
+
+/* العنوان */
+.form-box h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 2em;
+  text-shadow: 0 0 10px cyan;
+  position: relative;
+  animation: shimmer 2.5s infinite linear;
+}
+
+/* تأثير طيف ضوء على العنوان */
+@keyframes shimmer {
+  0% {
+    text-shadow: 0 0 10px cyan, 0 0 20px transparent;
+  }
+  50% {
+    text-shadow: 0 0 10px cyan, 0 0 20px #00ffe1;
+  }
+  100% {
+    text-shadow: 0 0 10px cyan, 0 0 20px transparent;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field {
+  position: relative;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-field input::placeholder {
+  color: #ccc;
+}
+
+.input-field input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px #00ffe1;
+}
+
+/* أيقونات الحقول */
+.input-field .icon {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  color: #00e6ac;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* الفقرة والرابط */
+p {
+  color: #ddd;
+  font-size: 0.9em;
+  margin-top: 10px;
+  text-align: center;
+}
+
+p a {
+  color: #00e6ac;
+  text-decoration: none;
+}
+
+/* الأزرار */
+.btn-field {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.btn-field button {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #00e6ac, #00b3a4);
+  color: #1a1a1a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 12px #00ffe1aa;
+  animation: bounceBtn 6s infinite ease-in-out;
+}
+
+/* تفاعل عند المرور */
+.btn-field button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffe1, 0 0 20px #00ffe1;
+}
+
+/* نبضة بسيطة للأزرار */
+@keyframes bounceBtn {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* زر معطل */
+.disable {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  box-shadow: none;
+}
